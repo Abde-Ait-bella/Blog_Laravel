@@ -822,7 +822,7 @@
                         <div class="row align-items-center">
                             <div class="col-lg-8 pd_zero">
                                 <div class="image">
-                                    <img src="assets/images/testimonial/testimonial-image-1.jpg"
+                                    <img @foreach($avis as $av) src="{{asset('storage/'.$av->image)}}" @endforeach
                                         class="img-fluid height_800px object-fit-cover w_100" alt="img" />
                                 </div>
                             </div>

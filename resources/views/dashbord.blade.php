@@ -6,8 +6,15 @@
                 <div class="card">
                     <div class="card-header">Blog</div>
                     <div class="card-body">
-                        <form method="POST" action="{{ route('dashbord.store') }}">
+                        <form method="POST" action="{{ route('dashbord.store') }}" enctype='multipart/form-data'>
                             @csrf
+                            <div class="row mb-3">
+                                <label for="image" class="col-md-4 col-form-label text-md-end">Image</label>
+
+                                <div class="col-md-6">
+                                    <input id="image" type="file" class="form-control" name="image">
+                                </div>
+                            </div>
                             <div class="card-header mb-3">Blog 1</div>
                             <div>
                                 <div class="row mb-3">
@@ -61,7 +68,7 @@
                                     <label for="texte_2" class="col-md-4 col-form-label text-md-end">Texte</label>
 
                                     <div class="col-md-6">
-                                        <textarea id="texte_2" type="text" class="form-control" name="texte_2">value="@foreach($avis as $av){{ $av->texte2 }}@endforeach"</textarea>
+                                        <textarea id="texte_2" type="text" class="form-control" name="texte_2">@foreach($avis as $av){{ $av->texte2 }}@endforeach</textarea>
                                     </div>
                                 </div>
                             </div>
@@ -88,13 +95,13 @@
                                     <label for="texte_3" class="col-md-4 col-form-label text-md-end">Texte</label>
 
                                     <div class="col-md-6">
-                                        <textarea id="texte_3" type="text" class="form-control" name="texte_3">value="@foreach($avis as $av){{ $av->texte3 }}@endforeach"</textarea>
+                                        <textarea id="texte_3" type="text" class="form-control" name="texte_3">@foreach($avis as $av){{ $av->texte3 }}@endforeach</textarea>
                                     </div>
                                 </div>
                             </div>
                             <div class="row mb-0">
                                 <div class="col-md-6 offset-md-4">
-                                    <button type="submit" class="btn btn-primary">
+                                    <button type="submit" class="btn btn-outline-info">
                                         Modifier
                                     </button>
                                 </div>

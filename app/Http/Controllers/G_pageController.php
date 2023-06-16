@@ -14,6 +14,19 @@ class G_pageController extends Controller
     public function index()
     {
         $avis = Avis::all();
+        if ($avis->isEmpty()) {
+            $avis = new Avis();
+            $avis->titre1 = "Ivor Herbert";
+            $avis->sous_titre1 = "Manager, Airlines";
+            $avis->texte1 = "Sit amet consectetur adipi scey elit Condimentum quam nun facilisis condim entum pellentesque sapien quis tincidunt pulvinar non sem nisle eget enim elit. Imperdiet venenatis sed libero lectus sed cursus";
+            $avis->titre2 = "Ivor Herbert";
+            $avis->sous_titre2 = "Manager, Airlines";
+            $avis->texte2 = "Sit amet consectetur adipi scey elit Condimentum quam nun facilisis condim entum pellentesque sapien quis tincidunt pulvinar non sem nisle eget enim elit. Imperdiet venenatis sed libero lectus sed cursus";
+            $avis->titre3 = "Ivor Herbert";
+            $avis->sous_titre3 = "Manager, Airlines";
+            $avis->texte3 = "Sit amet consectetur adipi scey elit Condimentum quam nun facilisis condim entum pellentesque sapien quis tincidunt pulvinar non sem nisle eget enim elit. Imperdiet venenatis sed libero lectus sed cursus";
+            $avis->save();
+        }
         return view('Home', ["avis" => $avis]);
     }
 
@@ -31,7 +44,11 @@ class G_pageController extends Controller
      */
     public function store(Request $request)
     {
-        $avis = new Avis();
+        $avis = Avis::find(1);
+            $extension = $request->image->extension();
+            $name = uniqid().".". $extension ;
+            $path = $request->image->storeAs('Images', $name, 'public');
+            $avis->image = $path;
         $avis->titre1 = $request->titre_1;
         $avis->sous_titre1 = $request->sous_titre_1;
         $avis->texte1 = $request->texte_1;

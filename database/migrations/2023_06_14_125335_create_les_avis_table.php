@@ -13,15 +13,16 @@ return new class extends Migration
     {
         Schema::create('avis', function (Blueprint $table) {
             $table->id();
-            $table->string('titre1');
-            $table->string('sous_titre1');
-            $table->string('texte1');
-            $table->string('titre2');
-            $table->string('sous_titre2');
-            $table->string('texte2');
-            $table->string('titre3');
-            $table->string('sous_titre3');
-            $table->string('texte3');
+            $table->string('image')->nullable();
+            $table->string('titre1')->default('Ivor Herbert');
+            $table->string('sous_titre1')->default('Manager, Airlines');
+            $table->string('texte1')->default('Sit amet consectetur adipi scey elit Condimentum quam nun facilisis condim entum pellentesque sapien quis tincidunt pulvinar non sem nisle eget enim elit. Imperdiet venenatis sed libero lectus sed cursus ');
+            $table->string('titre2')->default('Ivor Herbert');
+            $table->string('sous_titre2')->default('Manager, Airlines');
+            $table->string('texte2')->default('Sit amet consectetur adipi scey elit Condimentum quam nun facilisis condim entum pellentesque sapien quis tincidunt pulvinar non sem nisle eget enim elit. Imperdiet venenatis sed libero lectus sed cursus ');;
+            $table->string('titre3')->default('Ivor Herbert');
+            $table->string('sous_titre3')->default('Manager, Airlines');
+            $table->string('texte3')->default('Sit amet consectetur adipi scey elit Condimentum quam nun facilisis condim entum pellentesque sapien quis tincidunt pulvinar non sem nisle eget enim elit. Imperdiet venenatis sed libero lectus sed cursus ');;
             $table->timestamps();
         });
     }
