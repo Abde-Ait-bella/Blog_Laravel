@@ -38,6 +38,9 @@ class G_pageController extends Controller
         $avis->titre2 = $request->titre_2;
         $avis->sous_titre2 = $request->sous_titre_2;
         $avis->texte2 = $request->texte_2;
+        $avis->titre3 = $request->titre_3;
+        $avis->sous_titre3 = $request->sous_titre_3;
+        $avis->texte3 = $request->texte_3;
         $avis->save();
         return redirect('/');
     }

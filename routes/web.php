@@ -30,9 +30,7 @@ Auth::routes();
 
 // Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-Route::get('/', function () {
-    return view('Home');
-})->name('home');
+Route::get('/', [G_pageController::class, 'index'])->name('home');
 
 route::prefix('facture')->middleware('auth')->group(function(){
     route::get('/liste', [FactureController::class, 'index'])->name('facture.liste');

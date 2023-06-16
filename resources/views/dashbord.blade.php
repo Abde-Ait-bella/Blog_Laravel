@@ -5,9 +5,6 @@
             <div class="col-md-8">
                 <div class="card">
                     <div class="card-header">Blog</div>
-                    @foreach ($avis as $av)
-                    <sup>“</sup>{{ $av->titre1 }}<sub>“</sub>
-                    @endforeach
                     <div class="card-body">
                         <form method="POST" action="{{ route('dashbord.store') }}">
                             @csrf
@@ -18,7 +15,7 @@
 
                                     <div class="col-md-6">
                                         <input id="titre_1" type="text" class="form-control" name="titre_1"
-                                            required >
+                                            required value="@foreach($avis as $av){{ $av->titre1 }}@endforeach">
                                     </div>
                                 </div>
 
@@ -28,7 +25,7 @@
 
                                     <div class="col-md-6">
                                         <input id="sous_titre_1" type="text" class="form-control" name="sous_titre_1"
-                                            >
+                                        value="@foreach($avis as $av){{ $av->sous_titre1 }}@endforeach">
                                     </div>
                                 </div>
 
@@ -37,7 +34,7 @@
 
                                     <div class="col-md-6">
                                         <textarea id="texte_1" type="text" class="form-control" name="texte_1"
-                                            ></textarea>
+                                            >@foreach($avis as $av){{ $av->texte1 }}@endforeach</textarea>
                                     </div>
                                 </div>
                             </div>
@@ -47,7 +44,7 @@
                                     <label for="titre_2" class="col-md-4 col-form-label text-md-end">Titre</label>
 
                                     <div class="col-md-6">
-                                        <input id="titre_2" type="text" class="form-control" name="titre_2">
+                                        <input id="titre_2" type="text" class="form-control" name="titre_2" value="@foreach($avis as $av){{ $av->titre2 }}@endforeach">
                                     </div>
                                 </div>
 
@@ -56,7 +53,7 @@
                                         titre</label>
 
                                     <div class="col-md-6">
-                                        <input id="sous_titre_2" type="text" class="form-control" name="sous_titre_2">
+                                        <input id="sous_titre_2" type="text" class="form-control" name="sous_titre_2" value="@foreach($avis as $av){{ $av->sous_titre2 }}@endforeach">
                                     </div>
                                 </div>
 
@@ -64,7 +61,34 @@
                                     <label for="texte_2" class="col-md-4 col-form-label text-md-end">Texte</label>
 
                                     <div class="col-md-6">
-                                        <textarea id="texte_2" type="text" class="form-control" name="texte_2"></textarea>
+                                        <textarea id="texte_2" type="text" class="form-control" name="texte_2">value="@foreach($avis as $av){{ $av->texte2 }}@endforeach"</textarea>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card-header mb-3">Blog 3</div>
+                            <div>
+                                <div class="row mb-3">
+                                    <label for="titre_3" class="col-md-4 col-form-label text-md-end">Titre</label>
+
+                                    <div class="col-md-6">
+                                        <input id="titre_3" type="text" class="form-control" name="titre_3" value="@foreach($avis as $av){{ $av->titre3 }}@endforeach">
+                                    </div>
+                                </div>
+
+                                <div class="row mb-3">
+                                    <label for="sous_titre_3" class="col-md-4 col-form-label text-md-end">Sous
+                                        titre</label>
+
+                                    <div class="col-md-6">
+                                        <input id="sous_titre_3" type="text" class="form-control" name="sous_titre_3" value="@foreach($avis as $av){{ $av->sous_titre3 }}@endforeach">
+                                    </div>
+                                </div>
+
+                                <div class="row mb-3">
+                                    <label for="texte_3" class="col-md-4 col-form-label text-md-end">Texte</label>
+
+                                    <div class="col-md-6">
+                                        <textarea id="texte_3" type="text" class="form-control" name="texte_3">value="@foreach($avis as $av){{ $av->texte3 }}@endforeach"</textarea>
                                     </div>
                                 </div>
                             </div>

@@ -62,7 +62,7 @@
                     <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ms-auto">
                         <li class="nav-item">
-                            <a class="nav-link" href="{{route('dashbord.index')}}">Dashbord</a>
+                            <a class="nav-link" href="{{route('dashbord.create')}}">Dashbord</a>
                         </li>
                     </ul>
                 </div>
@@ -827,8 +827,7 @@
                                 </div>
                             </div>
                             <div class="col-lg-4 pd_right_100 pd_top_40">
-                                <div
-                                    class="testimonial_ver_carousel nav_false position-relative dot_true mr_left_minus_250">
+                                <div class="testimonial_ver_carousel nav_false position-relative dot_true mr_left_minus_250">
                                     <div class="vertoneitem owl-theme owl-carousel">
                                         <div class="testimonial_box type_one">
                                             <svg class="svg1" width="631" height="475" viewBox="0 0 631 475"
@@ -861,8 +860,10 @@
                                                     </svg>
                                                 </div>
                                                 <div class="cont">
-                                                    <h4 class="title_no_a_22">Boris Elbert </h4>
-                                                    <p>Green Tech</p>
+                                                    @foreach ($avis as $av)
+                                                    <h4 class="title_no_a_22">{{ $av->titre1 }}</h4>
+                                                    <p>{{ $av->sous_titre1 }}</p>
+                                                    @endforeach
                                                 </div>
                                             </div>
                                             <i class="flaticon-right-quote"></i>
@@ -882,16 +883,14 @@
                                                         class="fa fa-star empty"></i>
                                                 </p>
                                                 <div class="title_no_a_26 t_comment">
-                                                    <sup>“</sup>Sit amet consectetur adipi scey
-                                                    elit Condimentum quam nun facilisis condim entum
-                                                    pellentesque sapien quis tincidunt pulvinar non sem
-                                                    nisle eget enim elit. Imperdiet venenatis sed libero
-                                                    lectus sed cursus <sub>“</sub>
+                                                    @foreach ($avis as $av)
+                                                    <sup>“</sup>{{ $av->titre2 }}<sub>“</sub>
+                                                    @endforeach
                                                 </div>
                                             </div>
                                             <div class="lower_content clearfix">
                                                 <div class="image_box">
-                                                    <img class="img-fluid" src="assets/images/team/team-7.png"
+                                                    <img class="img-fluid" src="assets/images/team/team-5.png"
                                                         alt="image">
                                                     <svg width="86" height="88" viewBox="0 0 86 88"
                                                         fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -901,8 +900,10 @@
                                                     </svg>
                                                 </div>
                                                 <div class="cont">
-                                                    <h4 class="title_no_a_22">Ivor Herbert</h4>
-                                                    <p>Manager, Airlines</p>
+                                                    @foreach ($avis as $av)
+                                                    <h4 class="title_no_a_22">{{ $av->titre2 }}</h4>
+                                                    <p>{{ $av->sous_titre2 }}</p>
+                                                    @endforeach
                                                 </div>
                                             </div>
                                             <i class="flaticon-right-quote"></i>
@@ -922,16 +923,14 @@
                                                         class="fa fa-star empty"></i>
                                                 </p>
                                                 <div class="title_no_a_26 t_comment">
-                                                    <sup>“</sup>Sit amet consectetur adipi scey
-                                                    elit Condimentum quam nun facilisis condim entum
-                                                    pellentesque sapien quis tincidunt pulvinar non sem
-                                                    nisle eget enim elit. Imperdiet venenatis sed libero
-                                                    lectus sed cursus <sub>“</sub>
+                                                    @foreach ($avis as $av)
+                                                    <sup>“</sup>{{ $av->titre3 }}<sub>“</sub>
+                                                    @endforeach
                                                 </div>
                                             </div>
                                             <div class="lower_content clearfix">
                                                 <div class="image_box">
-                                                    <img class="img-fluid" src="assets/images/team/team-6.png"
+                                                    <img class="img-fluid" src="assets/images/team/team-5.png"
                                                         alt="image">
                                                     <svg width="86" height="88" viewBox="0 0 86 88"
                                                         fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -941,8 +940,10 @@
                                                     </svg>
                                                 </div>
                                                 <div class="cont">
-                                                    <h4 class="title_no_a_22">Fleix Everard </h4>
-                                                    <p>HR, Blue Soft Sol</p>
+                                                    @foreach ($avis as $av)
+                                                    <h4 class="title_no_a_22">{{ $av->titre3 }}</h4>
+                                                    <p>{{ $av->sous_titre3 }}</p>
+                                                    @endforeach
                                                 </div>
                                             </div>
                                             <i class="flaticon-right-quote"></i>

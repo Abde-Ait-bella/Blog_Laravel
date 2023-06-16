@@ -19,6 +19,9 @@ return new class extends Migration
             $table->string('titre2');
             $table->string('sous_titre2');
             $table->string('texte2');
+            $table->string('titre3');
+            $table->string('sous_titre3');
+            $table->string('texte3');
             $table->timestamps();
         });
     }
