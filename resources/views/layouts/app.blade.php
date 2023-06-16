@@ -106,6 +106,9 @@
             @yield('dashbord')
             @yield('liste')
             @yield('Edite')
+            @yield('dashbord-client')
+            @yield('dashbord_facture')
+            @yield('create_cliant')
         </main>
     </div>
     <script>

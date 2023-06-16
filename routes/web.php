@@ -1,6 +1,8 @@
 <?php
 
 use App\Http\Controllers\FactureController;
+use App\Http\Controllers\G_clientController;
+use App\Http\Controllers\G_pageController;
 use Illuminate\Support\Facades\Route;
 use illuminate\Support\Facades\Auth;
 
@@ -18,11 +20,10 @@ use illuminate\Support\Facades\Auth;
 
 
 
-Route::prefix('admin')->middleware(['auth','AdminMiddl'])->group(function(){
-    route::get('/dashbord', function(){
-        return view('dashbord');
-    });
-})->name('dashbord');
+Route::prefix('admin')->group(function(){
+    Route::resource('/dashbord', G_pageController::class);
+    // Route::resource('/dashbord/client', G_clientController::class);
+});
 
 Auth::routes();
 
@@ -34,8 +35,9 @@ Route::get('/', function () {
 })->name('home');
 
 route::prefix('facture')->middleware('auth')->group(function(){
+    route::get('/liste', [FactureController::class, 'index'])->name('facture.liste');
+    route::get('/create', [FactureController::class, 'create'])->name('facture.create');
     route::post('/store', [FactureController::class, 'store'])->name('facture.store');
-    route::get('/create', [FactureController::class, 'index'])->name('facture.liste');
     route::get('/{id}/edit', [FactureController::class, 'edit'])->name('facture.edit');
     route::put('/{id}', [FactureController::class, 'update'])->name('facture.update');
     Route::get('/resultat', [FactureController::class, 'show'])->name('facture.resultat');

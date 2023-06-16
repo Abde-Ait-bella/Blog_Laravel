@@ -1,8 +1,8 @@
 @extends('layouts.app')
 @section('liste')
     <div class="d-flex justify-content-between">
-        <a href="{{route('home')}}" class="btn btn-dark mb-4 ms-3">Routure</a>
-        <a href="{{route('home')}}" class="btn btn-secondary mb-4 me-3">Ajouter une facture</a>
+        <a href="{{route('facture.create')}}" class="btn btn-dark mb-4 ms-3">Routure</a>
+        <a href="{{route('facture.create')}}" class="btn btn-secondary mb-4 me-3">Ajouter une facture</a>
     </div>
     <center>
         @foreach ($facture as $fact)

@@ -15,7 +15,7 @@ class FactureController extends Controller
     public function index()
     {
         $facture = Facture::where("user_id" , Auth::user()->id)->get();
-        return view('Create',["facture" => $facture]);
+        return view('Liste',["facture" => $facture]);
     }
 
     /**
@@ -23,7 +23,8 @@ class FactureController extends Controller
      */
     public function create()
     {
-        //
+        
+        return view('Create');
     }
 
     /**
