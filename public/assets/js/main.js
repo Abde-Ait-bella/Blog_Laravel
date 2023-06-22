@@ -145,7 +145,7 @@
     }
 
     /*-----------------------
-    Shop filter active 
+    Shop filter active
 ------------------------- */
     $(".shop-filter-toogle").on("click", function (e) {
         e.preventDefault();

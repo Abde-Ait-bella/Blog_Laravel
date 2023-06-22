@@ -16,7 +16,7 @@ class G_clientController extends Controller
     public function index()
     {
         $client = User::all();
-        return view('dashbord_client', ["client" => $client]);
+        return view('Admin.dashbord_client', ["client" => $client]);
     }
 
     /**

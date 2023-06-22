@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('Admin.dashbord')
 @section('dashbord-client')
     @foreach ($client as $cli)
     <div class="container">

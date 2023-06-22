@@ -2,7 +2,7 @@
 Project: Vankine
 Version: 1.0
 Last change: First Release
-Primary use: Insurance 
+Primary use: Insurance
 -----===============-main-style-sheet-==============------*/
 /*-------------------Table of contents----------------------
 1) Variables - Css
@@ -22,11 +22,12 @@ Primary use: Insurance
 15) Blog - Css
 16) Pagination - Css
 17) Products - Css
-18) Footer - Css 
+18) Footer - Css
 -------------------Table of contents----------------------*/
 /*===========================================================================
-                                Variables 
+                                Variables
 ===========================================================================*/
+
 :root {
   --font-family-main: "DM Sans";
   --font-family-text: "DM Sans";
@@ -2836,7 +2837,7 @@ pre {
     2) --> section_title
     3) --> service_box
     4) --> image_box_only
-    5) --> fun_facts 
+    5) --> fun_facts
     6) --> team_box
     7) --> blog_box
     8) --> list_box
@@ -2845,10 +2846,10 @@ pre {
    11) --> process_box
    11) --> testimonial_box
    12) --> custom_tabs
-   13) --> image_video_box_only  
+   13) --> image_video_box_only
    14) --> progress_bar
    15) --> portfolio_box
-   16) --> price_box 
+   16) --> price_box
    17) --> contact_box_content
    18) --> Call to action
    19) --> Newsteller
@@ -9079,7 +9080,7 @@ body .slick-dots li:last-child {
 }
 
 /*==========================================================================
-                               header                                    
+                               header
 ==========================================================================*/
 .header_area .position-absolute {
   width: 100%;

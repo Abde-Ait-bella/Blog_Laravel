@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Client;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
@@ -15,7 +15,7 @@ class FactureController extends Controller
     public function index()
     {
         $facture = Facture::where("user_id" , Auth::user()->id)->get();
-        return view('Liste',["facture" => $facture]);
+        return view('Client.Liste',["facture" => $facture]);
     }
 
     /**
@@ -23,8 +23,8 @@ class FactureController extends Controller
      */
     public function create()
     {
-        
-        return view('Create');
+
+        return view('Client.Create');
     }
 
     /**
@@ -39,7 +39,7 @@ class FactureController extends Controller
         $facture->user()->associate(Auth::user()->id);
         $facture->montant = $request->montant;
         $facture->save();
-        return redirect('/');
+        return redirect('/facture/liste');
     }
 
     /**
